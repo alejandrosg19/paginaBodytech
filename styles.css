@@ -1,0 +1,401 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: white;
+    color: #2d2d2d;
+    font-family: "Gotham", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+header {
+    /*La posicion del menu principal es fija*/
+    position: fixed;
+    width: 100%;
+    /**/
+    z-index: 100;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr 1.1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "navbar navbar navbar navbar navbar navbar navbar navbar navbar navbar navbar navbar" "card1 card1 card1 card1 card1 card1 card2 card2 card2 card2 card2 card2" "card-img card-img card-img card-img card-img card-img card-img card-img card-img card-img card-img card-img" "card-img1 card-img1 card-img1 card-img2 card-img2 card-img2 card-img3 card-img3 card-img3 card-img4 card-img4 card-img4";
+}
+
+.navbar {
+    grid-area: navbar;
+    background-color: black;
+}
+
+.text-white {
+    color: white
+}
+
+.text-black {
+    color: black
+}
+
+a {
+    text-decoration: none;
+}
+
+.align-items {
+    display: flex;
+    /*Se muestra un contenedor flexible que tiene una flex-direction de tipo row , que significa que los elementos flexibles se muestra uno a continuación del otro horizontalmente a lo largo del eje principal*/
+    flex-direction: row;
+    /*Se alinean los items al final del div, hacia la derecha*/
+    justify-content: flex-end;
+    /*los items se alinean en la parte media de la altura del div*/
+    align-items: center;
+    padding: 0 31.5px;
+    /*Altura del navbar*/
+    height: 32px;
+}
+
+.item-navbar {
+    margin-left: 13px;
+    margin-left: 0.825rem;
+    /*tamaño*/
+    font-size: 12px;
+    /*Gorsor de letra*/
+    font-weight: 700;
+    /*Separacion entre las letras del texto*/
+    line-height: 1em;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+.item-navbar:hover {
+    color: rgb(101, 101, 101);
+}
+
+.naranja {
+    color: rgb(235, 104, 6);
+}
+
+.navbar2 {
+    grid-area: navbar;
+    background-color: white;
+    font-size: 10px;
+}
+
+
+/*Una tamaño cun poco mas grande que el a*/
+
+.navbar2>a {
+    font-size: 11px;
+}
+
+.logo {
+    height: 55px;
+    margin-right: 30px;
+}
+
+.nav-2 {
+    display: flex;
+    /*Direccion en fila a los elementos y si se acaba el espacio no haga salto de linea*/
+    flex-flow: row nowrap;
+    align-items: center;
+    /*da un mismo espacio a cada elemento, una especie de flex-betwen*/
+    justify-content: space-evenly;
+    height: 55px;
+    background-color: white;
+    /*Espacio entre letras*/
+    letter-spacing: .2px;
+}
+
+.item-navbar2 {
+    margin-left: 13px;
+    margin-left: 0.825rem;
+    /*tamaño*/
+    font-size: 12px;
+    /*Gorsor de letra*/
+    font-weight: 700;
+    /*Separacion entre las letras del texto*/
+    line-height: 2em;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.4s ease;
+    margin-right: 2px;
+}
+
+.item-navbar2:hover {
+    color: rgb(235, 104, 6);
+}
+
+.div-btn {
+    display: flex;
+    /*Direccion en fila a los elementos y si se acaba el espacio no haga salto de linea*/
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.btn {
+    margin: 0px;
+    padding: 0px;
+    padding: 8px 25px;
+    font-size: 14px;
+    /*Grosor de letra*/
+    font-weight: bold;
+}
+
+.btn-navbar {
+    background-color: rgb(235, 104, 6);
+    color: white;
+}
+
+.btn-navbar:hover {
+    background-color: black;
+}
+
+.list {
+    list-style: none;
+}
+
+
+/*fisrt-child, coge el primer elemento entre sus hermanos, en este caso coge al primer span*/
+
+.btn a span:first-child {
+    display: inline-block;
+}
+
+.btn a {
+    display: block;
+    position: relative;
+    /*especifica: si recortar contenido, dibujar barras de desplazamiento o mostrar el contenido excedente en un elemento a nivel de bloque.*/
+    overflow: hidden;
+    color: white;
+}
+
+.btn a span:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+}
+
+.btn a span {
+    transition: transform 0.4s ease-out;
+}
+
+.btn a:hover span:first-child {
+    transform: translateY(100%);
+}
+
+.btn a:hover span:last-child {
+    transform: none;
+}
+
+.icon {
+    margin-left: 10px;
+}
+
+.search {
+    padding-left: 30px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-left: 7px;
+    border-left: solid #F1F1F1;
+    color: black;
+}
+
+section {
+    padding-top: 90px;
+    margin-bottom: 20px;
+}
+
+.img-section {
+    width: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 1px 1px;
+    grid-template-areas: "card1 card1 card1 card1 card1 card1 card2 card2 card2 card2 card2 card2" ". . . . . . . . . . . ." ". . . . . . . . . . . .";
+    padding: 0%;
+}
+
+.card1 {
+    grid-area: card1;
+    background-image: url(https://bodytech.com.co/uploads/anonymoushomebanner/ffdc5c01db9249c7a27511fe570e4bee/1000x1000.jpg);
+    margin-right: 10px;
+}
+
+.card2 {
+    grid-area: card2;
+    background-image: url(https://bodytech.com.co/uploads/anonymoushomebanner/3c979d6c5df6471990d519b004c0b274/kv-final.jpg);
+    margin-left: 10px;
+}
+
+.card {
+    /*Es el elemento div que en realidad en pequeños pero posee un padding grande*/
+    padding: 250px 100px;
+    /*Centramos contenido*/
+    text-align: center;
+    /*Indicamos que el background ente centrado*/
+    background-position: center center;
+    /*tamaño de las imagenes de fondo - Cover ajusta la imagen al tamaño del contenedor*/
+    background-size: cover;
+    /*Evita que se repita la imagen*/
+    background-repeat: no-repeat;
+    /*Posicion relative para que el pseudo-elemento solo se aplique al div y no al resto de la pantalla*/
+    position: relative;
+}
+
+
+/*pseudo-elemento*/
+
+.card:before {
+    /*Se indica que hay contenido el el pseudo elemento, contenido vacio*/
+    content: '';
+    /*Se posiciona de manera absoluta*/
+    position: absolute;
+    /*Se estira a todos los extremps del contenedor*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*Color negro con opacidad */
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.card h1 {
+    font-size: 45px;
+    color: #fff;
+    position: relative;
+}
+
+.card h2 {
+    font-size: 15px;
+    color: #fff;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.btn-card {
+    margin-top: 20px;
+}
+
+.a-btn {
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    position: relative;
+}
+
+.a-btn:hover {
+    background-color: rgb(235, 104, 6);
+    border-color: rgb(235, 104, 6);
+}
+
+.card-img {
+    grid-area: card-img;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    /*arriva,derecha,abajo,izquierda*/
+    padding: 100px 100px 30px 100px;
+    background-color: rgb(245, 245, 245);
+    margin-top: 15px;
+}
+
+.card-img h3 {
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+
+.card-img p {
+    font-size: 20px;
+    padding: 2px;
+}
+
+.carrusel {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.carrusel-card {
+    /*Es el elemento div que en realidad en pequeños pero posee un padding grande*/
+    padding: 200px 150px;
+    /*Centramos contenido*/
+    text-align: center;
+    /*Indicamos que el background ente centrado*/
+    background-position: center center;
+    /*tamaño de las imagenes de fondo - Cover ajusta la imagen al tamaño del contenedor*/
+    background-size: cover;
+    /*Evita que se repita la imagen*/
+    background-repeat: no-repeat;
+    /*Posicion relative para que el pseudo-elemento solo se aplique al div y no al resto de la pantalla*/
+    position: relative;
+    margin: 10px;
+}
+
+.carrusel-card img {
+    -webkit-transition: all .9s ease;
+    /* Safari y Chrome */
+    width: 100%;
+}
+
+.carrusel-card:hover img {
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    transform: scale(1.25);
+}
+
+.carrusel-card {
+    /*Ancho y altura son modificables al requerimiento de cada uno*/
+    width: 300px;
+    height: 180px;
+    overflow: hidden;
+}
+
+.carrusel-card:before {
+    /*Se indica que hay contenido el el pseudo elemento, contenido vacio*/
+    content: '';
+    /*Se posiciona de manera absoluta*/
+    position: absolute;
+    /*Se estira a todos los extremps del contenedor*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*Color negro con opacidad */
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.card-img1 {
+    grid-area: card-img1;
+    background-image: url(https://i.pinimg.com/originals/b1/9d/99/b19d9945d834c074522d3797753ae4fc.jpg);
+}
+
+.card-img2 {
+    grid-area: card-img2;
+    background-image: url(https://bodytech.com.co/uploads/redactorfile/42d920acd05d48fe8a2e77c73dadd2b6/image.png);
+}
+
+.card-img3 {
+    grid-area: card-img3;
+    background-image: url(https://pbs.twimg.com/media/EDym__LX4AU-mYz.jpg);
+}
+
+.card-img4 {
+    grid-area: card-img4;
+    background-image: url(https://bodytech.com.co/uploads/homebanner/e0525f3739414709853cea08a9be3097/838x1240.jpg);
+}
